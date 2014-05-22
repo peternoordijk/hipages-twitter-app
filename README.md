@@ -96,15 +96,18 @@ The MVC pattern has obviously done its work in here. However, the namegiving
 might be a bit weird: the domain is equal to a model, the controllers are 
 actually the views and the services are really just controllers. Right now 
 I'm a bit confused about the reason for this as well.
+
 The fourth package, called builders, is something different. This package is 
 being used to create the actual connection to Twitter. The Twitter4J library 
 has entirely been encapsulated in this package. The rest of the project can 
 only use its interfaces. That said, it would be really easy to switch to 
 another library if Twitter4J gets deprecated at a certain moment. 
+
 Twitter4J has its own domain model. However, relying on this model would be 
 in conflict with the statement above. That's why I created my own domain 
 model which contains only the information which will be used by the frontend 
 of this application.
+
 Last but not least there is a test package. This package contains some tests
 which are used to confirm whether the implementation of the Java layer is 
 correct.
@@ -118,6 +121,7 @@ The user of this application can access its features using a web browser. I
 decided to use the frontend framework Bootstrap, as it is open-source and 
 very usefull for small projects like this. It's also produced by Twitter so 
 that makes it even better for this particular project. 
+
 As JavaScript usually tends to become one big dirty fix I tried to implement 
 some Object-oriented features. This doesn't take away that it still looks 
 quite chaotic. 
@@ -141,4 +145,8 @@ After running this code a folder called 'target' will be created in your
 project root directory. This folder contains a .war file which you will need 
 to copy into the webapps folder of Tomcat. Now all you have to do is restart 
 Tomcat (or just wait for 10 seconds until Tomcat identifies the file). Now 
-go to http://localhost:8080/hipages-twitter-app/ and voila!
+go to 
+
+  http://localhost:8080/hipages-twitter-app/
+
+and voila!
