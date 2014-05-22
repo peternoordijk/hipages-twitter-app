@@ -91,6 +91,7 @@ five Java packages:
 - services
 - builders
 - tests
+
 The MVC pattern has obviously done its work in here. However, the namegiving 
 might be a bit weird: the domain is equal to a model, the controllers are 
 actually the views and the services are really just controllers. Right now 
